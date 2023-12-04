@@ -208,17 +208,16 @@
 
       const generateTable = function () {
         const area = document.getElementById("tableArea");
-        const table = document.createElement("table");
-
-        for (let j = 0; j < 4; j++) {
-          const tr = document.createElement("tr");
-        }
-        for (let k = 0; k < 5; i++) {
-          const td = document.createElement("td");
-        }
-        tr[0] = "immagine, nome del prodotto, quantità, prezzo";
-
-        area.appendiceChild("table");
+        const tabella = document.createElement("table");
+        const intestazione = tabella.createTHead();
+        const rigaIntestazione = intestazione.insertRow();
+        rigaIntestazione.insertCell().textContent = "Immagine";
+        rigaIntestazione.insertCell().textContent = "Nome Prodotto";
+        rigaIntestazione.insertCell().textContent = "Quantità";
+        rigaIntestazione.insertCell().textContent = "Prezzo";
+        const tbody = tabella.createTBody();
+        const table = area.appendChild(tabella);
+        table.style.border = "1em, solid, black";
       };
       generateTable();
 
